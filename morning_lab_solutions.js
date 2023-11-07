@@ -248,14 +248,6 @@ Think about how you would create that pattern using JavaScript
 Here is the challenge: By considering the terms in the Fibonacci sequence
 whose values do not exceed four million, find the sum of the even-valued terms.
 
-//function fibonacci(n) {  //this is the typical approach in working with Fibonacci sequence
-  if (n <= 1) {
-    return n;
-  } else {
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
-}
-
 //Pseudocoding:
 1. We have Fibonacci numbers.
 2. We work with a sum of two numbers. So if we declare those two numbers and a sum
@@ -263,9 +255,22 @@ those will be our initial global variables. In realit we need only first two num
 sequense: 1 and 2. The rest of the numbers will be calculated using these two numbers.
 3. Then we can set up a loop with a final value being 4mil
 4. Iterating thru our sum, we can then check it for being even.
-5. Logging the selected even sum.
+5. Logging the selected even sum.*/
+let r = 1; //declaring initial global variables
+let s = 2;
+let sum = 0; //setting up the initial sum as zero
 
-Fun fact! Fibonacci appears often in nature. Check it out
+while (r <= 40) { //running a loop till the given number. (replace 40 with 4 mil)
+    if (r  % 2 == 0) { //checking if our variables are even (as per task request)
+        sum += r //re-assigning the value of the sum with even numbers
+    }
+    let tempor = r; //using a temporary variable for next calculation
+    r = s;
+    s = tempor + s //next fibonacci number
+}
+console.log(sum)
+
+/*Fun fact! Fibonacci appears often in nature. Check it out
 
 Feeling overwhelmed?
 
